@@ -108,7 +108,8 @@ public class Maze {
         }
         return false;
     }
-
+    
+    //Print the solved maze
     public static void printSolution(){
         for(int i=0;i<maze.length;i++){
             for(int j = 0; j<numcol; j++){
