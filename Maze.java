@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 import java.io.*;
 
@@ -63,7 +62,6 @@ public class Maze {
             
         }
         catch(Exception z){
-            //z.printStackTrace();
             System.out.println("File not found error, please try again");
         }
     }
@@ -86,15 +84,23 @@ public class Maze {
                 maze[row][col] = '.';
             }
             maze[row][col] = '+';
+
+            //Check upwards
             if(traverseMaze(maze, row+1, col)){
                 return true;
             }
+
+            //Check below
             if(traverseMaze(maze, row-1, col)){
                 return true;
             }
+
+            //Check right
             if(traverseMaze(maze, row, col+1)){
                 return true;
             }
+
+            //Check left
             if(traverseMaze(maze, row, col-1)){
                 return true;
             }
@@ -103,7 +109,6 @@ public class Maze {
         return false;
     }
 
-
     public static void printSolution(){
         for(int i=0;i<maze.length;i++){
             for(int j = 0; j<numcol; j++){
@@ -111,7 +116,5 @@ public class Maze {
             }
             System.out.println();}
     }
-
-
 }
 
